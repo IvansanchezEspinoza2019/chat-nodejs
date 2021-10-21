@@ -13,8 +13,15 @@ const server = app.listen(port, function(){
 //socket.io
 const io = socket(server)
 
+/* Listen for clients connections */
 io.on('connection', function(socket){
-    console.log("mde socket connection")
+    console.log(`SNew Socket connection Socket-id: ${socket.id}`)
+
+    /* listen for messages of that client (socket) */
+    socket.on("chat", (data)=>{
+        /* sends this message to all connected sockets */
+        io.sockets.emit("chat", data)
+    })
 })
 
 
