@@ -2,9 +2,10 @@
 
 
 let SERVER_DEVELOPMENT = ()=>{return "http://localhost:4000";}
-let SERVER_PRODUCTION = ()=>{ return "https://nodejs-chat-socket-io.herokuapp.com/"+proces.env.PORT;}
-console.log(SERVER_PRODUCTION())
-const socket = io.connect(SERVER_PRODUCTION);
+let SERVER_PRODUCTION = (PORT)=>{ return `https://nodejs-chat-socket-io.herokuapp.com/${PORT}`;}
+
+console.log(SERVER_PRODUCTION(proces.env.PORT))
+const socket = io.connect(SERVER_PRODUCTION(proces.env.PORT));
 
 // Query dom
 let message = document.querySelector("#message")
