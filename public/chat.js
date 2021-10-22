@@ -2,7 +2,7 @@
 
 
 let SERVER_DEVELOPMENT=()=>{"http://localhost:4000";}
-let SERVER_PRODUCTION=()=>{"https://nodejs-chat-socket-io.herokuapp.com/";}
+let SERVER_PRODUCTION=()=>{"https://nodejs-chat-socket-io.herokuapp.com/"+proces.env.PORT;}
 
 const socket = io.connect(SERVER_PRODUCTION);
 
