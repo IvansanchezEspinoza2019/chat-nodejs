@@ -3,7 +3,7 @@
 
 let SERVER_DEVELOPMENT = ()=>{return "http://localhost:4000";}
 let SERVER_PRODUCTION = ()=>{ return "https://nodejs-chat-socket-io.herokuapp.com/"+proces.env.PORT;}
-console.log(SERVER_PRODUCTION)
+console.log(SERVER_PRODUCTION())
 const socket = io.connect(SERVER_PRODUCTION);
 
 // Query dom
