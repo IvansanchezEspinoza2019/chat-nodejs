@@ -1,5 +1,8 @@
 // make connection to the server
-const socket = io.connect("http://localhost:4000");
+
+import {SERVER_DEVELOPMENT, SERVER_PRODUCTION} from './config'
+
+const socket = io.connect(SERVER_PRODUCTION);
 
 // Query dom
 let message = document.querySelector("#message")
