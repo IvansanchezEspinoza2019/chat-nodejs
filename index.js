@@ -15,12 +15,16 @@ const io = socket(server)
 
 /* Listen for clients connections */
 io.on('connection', function(socket){
-    console.log(`SNew Socket connection Socket-id: ${socket.id}`)
+    console.log(`New Socket connection Socket-id: ${socket.id}`)
 
     /* listen for messages of that client (socket) */
     socket.on("chat", (data)=>{
         /* sends this message to all connected sockets */
         io.sockets.emit("chat", data)
+    })
+
+    socket.on("typing", (data)=>{
+        socket.broadcast.emit("typing", data)
     })
 })
 
