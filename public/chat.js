@@ -1,6 +1,8 @@
 // make connection to the server
 
-import {SERVER_PRODUCTION, SERVER_DEVELOPMENT} from './config'
+
+let SERVER_DEVELOPMENT=()=>{"http://localhost:4000";}
+let SERVER_PRODUCTION=()=>{"https://nodejs-chat-socket-io.herokuapp.com/";}
 
 const socket = io.connect(SERVER_PRODUCTION);
 
