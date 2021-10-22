@@ -1,6 +1,6 @@
 // make connection to the server
 
-import {SERVER_DEVELOPMENT, SERVER_PRODUCTION} from './config'
+import {SERVER_PRODUCTION, SERVER_DEVELOPMENT} from './config'
 
 const socket = io.connect(SERVER_PRODUCTION);
 
